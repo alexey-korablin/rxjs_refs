@@ -1,0 +1,23 @@
+{
+  "name": "rxjs_refs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexey-korablin/rxjs_refs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexey-korablin/rxjs_refs/issues"
+  },
+  "homepage": "https://github.com/alexey-korablin/rxjs_refs#readme",
+  "dependencies": {
+    "rxjs": "^6.5.5"
+  }
+}
