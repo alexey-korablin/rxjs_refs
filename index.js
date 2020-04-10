@@ -17,6 +17,24 @@ Rx.Observable.fromEvent(button, 'click')
   .map((event) => event.clientX)
   .subscribe(observer);
 
+// #2. Using operators
+
+console.log('#2. Using operators. map()');
+
+const observable0 = Rx.Observable.interval(1000);
+const observer0 = {
+  next: (value) => {
+    console.log(value);
+  },
+};
+
+observable0
+  .map((value) => {
+    return `Number: ${value}`;
+  })
+  .throttleTime(2000)
+  .subscribe(observer0);
+
 // #1. Create own observer
 
 console.log('#1. Create own observer, with error');
