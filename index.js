@@ -19,6 +19,27 @@ Rx.Observable.fromEvent(button, 'click')
 
 // #2. Using operators
 
+console.log('#3. Using operators. debounceTime()');
+
+const input = document.querySelector('input');
+
+const observable2 = Rx.Observable.fromEvent(input, 'input');
+
+const observer2 = {
+  next: (value) => {
+    console.log(value);
+  },
+  error: (error) => {
+    console.log(error);
+  },
+};
+
+observable2
+  .map((event) => event.target.value)
+  .debounceTime(2000)
+  .distinctUntilChanged()
+  .subscribe(observer2);
+
 console.log('#3. Using operators. filter()');
 
 const observable1 = Rx.Observable.interval(1000);
