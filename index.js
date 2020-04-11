@@ -19,6 +19,21 @@ Rx.Observable.fromEvent(button, 'click')
 
 // #2. Using operators
 
+console.log('#3. Using operators. filter()');
+
+const observable1 = Rx.Observable.interval(1000);
+
+const observer1 = {
+  next: (value) => {
+    console.log('#observer1 => ', value);
+  },
+  error: (error) => {
+    console.error('#observer1 => ', error);
+  },
+};
+
+observable1.filter((value) => value % 2 === 0).subscribe(observer1);
+
 console.log('#2. Using operators. map()');
 
 const observable0 = Rx.Observable.interval(1000);
