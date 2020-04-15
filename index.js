@@ -19,6 +19,25 @@ Rx.Observable.fromEvent(button, 'click')
 
 // #2. Using operators
 
+console.log('#3. Using operators. reduce()');
+
+const observable3 = Rx.Observable.of(1, 2, 3, 4, 5);
+
+const observer3_0 = {
+  next: (value) => {
+    console.log('reduce from observer3_0 ==> ', value);
+  },
+};
+
+const observer3_1 = {
+  next: (value) => {
+    console.log('scan from observer3_1 ==> ', value);
+  },
+};
+
+observable3.reduce((acc, next) => acc + next, 0).subscribe(observer3_0);
+observable3.scan((acc, next) => acc + next, 0).subscribe(observer3_1);
+
 console.log('#3. Using operators. debounceTime()');
 
 const input = document.querySelector('input');
